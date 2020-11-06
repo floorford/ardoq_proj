@@ -47,3 +47,19 @@ button {
   border: none;
   margin: 0 1rem;
 }
+
+.fourohfour {
+  display: flex;
+}
+
+.fourohfour img {
+  width: 100%;
+}
+
+.fourohfour div:first-of-type {
+  width: 60%;
+}
+
+.fourohfour div:last-of-type {
+  width: 40%;
+}
