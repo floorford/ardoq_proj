@@ -1,6 +1,8 @@
 import React from "react";
 import { HashRouter as Router, Route, Switch, Link } from "react-router-dom";
 
+import "./css/style.css";
+
 import MaxProductCalculator from "./components/MaxProductCalculator";
 import OsloBikes from "./components/OsloBikes";
 import FourOhFour from "./components/FourOhFour";
@@ -13,12 +15,18 @@ const App = () => {
       <header>
         <h1>Ardoq Project</h1>
         <nav>
-          <ul>
+          <ul className='menu'>
             <li>
-              <Link to='/calculator'>Max Product Calculator</Link>
+              <Link to='/calculator'>
+                <i className='fi-list'></i>
+                <span>Max Product Calculator</span>
+              </Link>
             </li>
             <li>
-              <Link to='oslobikes'>Oslo Bikes</Link>
+              <Link to='oslobikes'>
+                <i className='fi-list'></i>
+                <span>Oslo Bikes</span>
+              </Link>
             </li>
           </ul>
         </nav>

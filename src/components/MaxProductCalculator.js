@@ -54,8 +54,8 @@ class MaxProductCalculator extends React.Component {
             product between three of those numbers.
           </p>
           <p>
-            For example, given the list [1, 10, 2, 6, 5, 3] the highest product
-            would be 10 * 6 * 5 = 300
+            For example, given the list: <strong>[1, 10, 2, 6, 5, 3]</strong>{" "}
+            the highest product would be: <strong>10 * 6 * 5 = 300</strong>
           </p>
           {list ? (
             <ul>
