@@ -19,7 +19,9 @@ class OsloBikes extends React.Component {
 
     this.state = {
       results: [],
+      searchedResults: [],
       activeStation: [],
+      search: "",
     };
   }
 
@@ -30,7 +32,12 @@ class OsloBikes extends React.Component {
   getStations = () => {
     oslocitybikes
       .get("station_information.json")
-      .then((data) => this.setState({ results: data.data.data.stations }))
+      .then((data) =>
+        this.setState({
+          results: data.data.data.stations,
+          searchedResults: data.data.data.stations,
+        })
+      )
       .catch((err) => {
         console.log(err);
         return null;
@@ -52,16 +59,32 @@ class OsloBikes extends React.Component {
       });
   };
 
+  handleSearch = (e) => {
+    const searchedResults = this.state.results.filter((x) =>
+      x.name.toLowerCase().includes(e.target.value.toLowerCase())
+    );
+    this.setState({ search: e.target.value, searchedResults });
+  };
+
   render() {
-    const { activeStation, results } = this.state;
+    const { activeStation, search, searchedResults } = this.state;
 
     return (
       <main>
         <section>
           <h1>Stations</h1>
+          <form>
+            <label>Find a station:</label>
+            <input
+              type='search'
+              placeholder='Type a station name...'
+              onChange={this.handleSearch}
+              value={search}
+            />
+          </form>
           <div className='card-container'>
-            {results ? (
-              results.map((station, index) => {
+            {searchedResults ? (
+              searchedResults.map((station, index) => {
                 return (
                   <div className='card' key={index}>
                     <h2>{station.name}</h2>
