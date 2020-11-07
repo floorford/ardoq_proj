@@ -23,7 +23,7 @@ const App = () => {
               </Link>
             </li>
             <li>
-              <Link to='oslobikes'>
+              <Link to='/oslobikes'>
                 <i className='fi-list'></i>
                 <span>Oslo Bikes</span>
               </Link>

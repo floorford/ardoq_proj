@@ -75,21 +75,29 @@ class MaxProductCalculator extends React.Component {
               id='list'
               value={input}
             />
-            <button onClick={this.handleAddNumbers} disabled={!input.length}>
+            <button
+              className='button'
+              onClick={this.handleAddNumbers}
+              disabled={!input.length}
+            >
               Add to the list
             </button>
           </form>
           <p>
             Once you've added 3 or more numbers, click the calculate button!
           </p>
-          <button onClick={this.handleCalculation}>Calculate!</button>
+          <button className='button' onClick={this.handleCalculation}>
+            Calculate!
+          </button>
           {total ? <h4>The highest product is: {total}</h4> : null}
           {error ? (
             <p>
               Please enter at least 3 numbers before using the calculate button
             </p>
           ) : null}
-          <button onClick={this.handleReset}>Reset</button>
+          <button className='button' onClick={this.handleReset}>
+            Reset
+          </button>
         </section>
       </article>
     );

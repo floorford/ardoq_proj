@@ -7,14 +7,12 @@ import React from "react";
 // the amount of free spots a station currently has
 // How you show the stations and status is also up to you.
 
-const StationDetail = () => {
+const StationDetail = ({ station }) => {
   return (
-    <main>
-      <h1>Station: Blah</h1>
-      <h3>Bikes Available</h3>
-      <h3>Free Spots</h3>
-      Back to other stations
-    </main>
+    <section>
+      <p>Bikes Available: {station.num_bikes_available}</p>
+      <p>Free Spots: {station.num_docks_available}</p>
+    </section>
   );
 };
 

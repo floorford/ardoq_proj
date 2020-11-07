@@ -38,28 +38,3 @@ input {
   display: block;
   margin: 1rem;
 }
-
-button {
-  background-color: rgb(90, 35, 161);
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  border: none;
-  margin: 0 1rem;
-}
-
-.fourohfour {
-  display: flex;
-}
-
-.fourohfour img {
-  width: 100%;
-}
-
-.fourohfour div:first-of-type {
-  width: 60%;
-}
-
-.fourohfour div:last-of-type {
-  width: 40%;
-}

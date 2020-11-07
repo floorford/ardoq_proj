@@ -1,0 +1,102 @@
+body {
+  background-color: salmon;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+
+  margin: 0 auto;
+}
+
+.card {
+  background-color: white;
+  width: 14%;
+  min-height: 190px;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  margin: 2rem;
+  box-shadow: -20px -20px 0 0 #ff9d92;
+  border-radius: 10px;
+  animation-name: shadow-show;
+  animation-duration: 1.5s;
+  transition-timing-function: cubic-bezier(0.795, 0, 0.165, 1); /* custom */
+}
+
+.card h1,
+.card h2 {
+  margin: 0;
+  padding: 0 0 15px 0;
+  font-size: 1.3rem;
+  color: #282828;
+}
+
+.card hr {
+  display: block;
+  border: none;
+  height: 3px;
+  background-color: salmon;
+  margin: 0;
+
+  animation-name: line-show;
+  animation-duration: 0.3s;
+  transition-timing-function: cubic-bezier(0.795, 0, 0.165, 1); /* custom */
+}
+
+.card p {
+  margin: 15px 0 0 0;
+  font-weight: 100;
+  letter-spacing: -0.25px;
+  line-height: 1.25;
+  font-size: 16px;
+  color: #282828;
+  animation-duration: 1.5s;
+}
+
+.button {
+  border: none;
+  background-color: salmon;
+  margin: 15px auto;
+  padding: 10px 30px;
+  color: white;
+  text-transform: uppercase;
+}
+
+.card strong {
+  display: initial;
+  margin: initial;
+}
+
+/* Standard syntax */
+@keyframes line-show {
+  from {
+    margin: 0 100px;
+  }
+  to {
+    margin: 0;
+  }
+}
+
+/* Standard syntax */
+@keyframes p-show {
+  from {
+    color: white;
+  }
+  to {
+    color: #282828;
+  }
+}
+
+/* Standard syntax */
+@keyframes shadow-show {
+  from {
+    -webkit-box-shadow: 0 0 0 0 #e0e0e0;
+    box-shadow: 0 0 0 0 #e0e0e0;
+  }
+  to {
+    -webkit-box-shadow: -20px -20px 0 0 #ff9d92;
+    box-shadow: -20px -20px 0 0 #ff9d92;
+  }
+}
