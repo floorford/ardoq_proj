@@ -1,5 +1,7 @@
 import React from "react";
 
+import "../css/MaxProductCalculator.css";
+
 class MaxProductCalculator extends React.Component {
   constructor(props) {
     super(props);
@@ -30,7 +32,7 @@ class MaxProductCalculator extends React.Component {
     const { list } = this.state;
 
     if (list.length >= 3) {
-      const listCopy = list;
+      const listCopy = list.slice();
       const sortedList = listCopy.sort((a, b) => a - b);
       const highestThree = sortedList.slice(Math.max(sortedList.length - 3, 0));
 
@@ -46,7 +48,7 @@ class MaxProductCalculator extends React.Component {
     const { list, input, total, error } = this.state;
 
     return (
-      <article>
+      <article className='calculator'>
         <h2>Max Product Calculator</h2>
         <section>
           <p>
@@ -64,6 +66,7 @@ class MaxProductCalculator extends React.Component {
               ))}
             </ul>
           ) : null}
+          {total ? <h4>The highest product is: {total}</h4> : null}
           <form>
             <label htmlFor='list'>
               Create a list of numbers, by entering numbers below
@@ -86,16 +89,23 @@ class MaxProductCalculator extends React.Component {
           <p>
             Once you've added 3 or more numbers, click the calculate button!
           </p>
-          <button className='button' onClick={this.handleCalculation}>
+          <button
+            className='button'
+            onClick={this.handleCalculation}
+            disabled={list.length >= 3 ? "" : "disabled"}
+          >
             Calculate!
           </button>
-          {total ? <h4>The highest product is: {total}</h4> : null}
           {error ? (
             <p>
               Please enter at least 3 numbers before using the calculate button
             </p>
           ) : null}
-          <button className='button' onClick={this.handleReset}>
+          <button
+            className='button'
+            disabled={list.length ? "" : "disabled"}
+            onClick={this.handleReset}
+          >
             Reset
           </button>
         </section>

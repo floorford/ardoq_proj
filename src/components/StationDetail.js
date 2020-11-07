@@ -9,7 +9,7 @@ import React from "react";
 
 const StationDetail = ({ station }) => {
   return (
-    <section>
+    <section className='panel accordion'>
       <p>Bikes Available: {station.num_bikes_available}</p>
       <p>Free Spots: {station.num_docks_available}</p>
     </section>

@@ -73,7 +73,11 @@ class OsloBikes extends React.Component {
                       <strong>Address:</strong> {station.address}
                     </p>
                     <button
-                      className='button'
+                      className={`button accordion ${
+                        activeStation.station_id === station.station_id
+                          ? "active"
+                          : ""
+                      }`}
                       onClick={() => this.handleStationDetails(station)}
                     >
                       Bike Availability
