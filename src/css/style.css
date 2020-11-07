@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap");
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Raleway", Arial, Helvetica, sans-serif;
   width: 95%;
@@ -16,6 +20,8 @@ header {
 
 nav ul {
   list-style: none;
+  margin-block-start: 0;
+  padding-inline-start: 0;
 }
 
 nav ul li {
@@ -38,16 +44,12 @@ nav ul li a:before {
   transition: all 0.5s;
 }
 
-nav ul li a:hover {
+nav ul li a:hover,
+nav ul li a.active {
   color: #555;
 }
 
 strong {
-  display: block;
-  margin: 1rem;
-}
-
-input {
   display: block;
   margin: 1rem;
 }

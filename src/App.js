@@ -1,5 +1,5 @@
 import React from "react";
-import { HashRouter as Router, Route, Switch, Link } from "react-router-dom";
+import { HashRouter as Router, Route, Switch, NavLink } from "react-router-dom";
 
 import "./css/style.css";
 
@@ -17,16 +17,16 @@ const App = () => {
         <nav>
           <ul className='menu'>
             <li>
-              <Link to='/calculator'>
+              <NavLink activeClassName='active' to='/calculator'>
                 <i className='fi-list'></i>
                 <span>Max Product Calculator</span>
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link to='/oslobikes'>
+              <NavLink activeClassName='active' to='/oslobikes'>
                 <i className='fi-list'></i>
                 <span>Oslo Bikes</span>
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </nav>

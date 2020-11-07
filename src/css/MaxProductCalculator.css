@@ -12,3 +12,16 @@
 .button:disabled {
   background-color: #a5817d;
 }
+
+input {
+  display: block;
+  margin: 1rem;
+  padding: 1rem;
+  width: 33%;
+}
+
+@media screen and (max-width: 500px) {
+  input {
+    width: 90%;
+  }
+}

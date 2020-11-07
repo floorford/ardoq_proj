@@ -67,9 +67,6 @@ class OsloBikes extends React.Component {
                     <h2>{station.name}</h2>
                     <hr />
                     <p>
-                      <strong>Current Capacity:</strong> {station.capacity}
-                    </p>
-                    <p>
                       <strong>Address:</strong> {station.address}
                     </p>
                     <button
@@ -80,7 +77,7 @@ class OsloBikes extends React.Component {
                       }`}
                       onClick={() => this.handleStationDetails(station)}
                     >
-                      Bike Availability
+                      <i className='fas fa-bicycle'></i>Bike Availability
                     </button>
                     {activeStation.station_id === station.station_id ? (
                       <StationDetail station={activeStation} />

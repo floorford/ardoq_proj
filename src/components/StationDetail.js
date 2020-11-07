@@ -11,7 +11,7 @@ const StationDetail = ({ station }) => {
   return (
     <section className='panel accordion'>
       <p>Bikes Available: {station.num_bikes_available}</p>
-      <p>Free Spots: {station.num_docks_available}</p>
+      <p>Docks Available: {station.num_docks_available}</p>
     </section>
   );
 };

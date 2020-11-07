@@ -77,6 +77,7 @@ class MaxProductCalculator extends React.Component {
               name='list'
               id='list'
               value={input}
+              placeholder='10'
             />
             <button
               className='button'
