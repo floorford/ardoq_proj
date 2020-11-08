@@ -13,7 +13,7 @@ class OsloBikes extends React.Component {
       searchedResults: [],
       activeStation: [],
       search: "",
-      message: "loading",
+      message: "Loading stations...",
     };
   }
 
