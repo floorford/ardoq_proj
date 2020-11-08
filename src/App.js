@@ -8,7 +8,16 @@ import OsloBikes from "./components/OsloBikes";
 import FourOhFour from "./components/FourOhFour";
 
 const App = () => {
-  const home = <div>Bye</div>;
+  const home = (
+    <section>
+      <h5>Thanks for the oppurtunity to work on this task!</h5>
+      <p>A little explanation on what's before you:</p>
+      <p>
+        I've used axios to make the requests to the Oslo Bikes API and React
+        Router for the in app navigation
+      </p>
+    </section>
+  );
 
   return (
     <Router>

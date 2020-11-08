@@ -4,15 +4,6 @@ import StationDetail from "./StationDetail";
 import "../css/OsloBikes.css";
 import oslocitybikes from "../api/oslocitybikes.js";
 
-// 2: Oslo city bikes has an open API showing real-time data on location and state of the bike stations.
-// Your task is to create a small application that utilizes this api to show:
-// the amount of available bikes a station currently has
-// the amount of free spots a station currently has
-// How you show the stations and status is also up to you.
-
-// TODO:
-// paginate results
-
 class OsloBikes extends React.Component {
   constructor(props) {
     super(props);
@@ -27,31 +18,29 @@ class OsloBikes extends React.Component {
 
   componentDidMount() {
     this.getStations();
+    this.handleStationDetails();
   }
 
   getStations = () => {
     oslocitybikes
       .get("station_information.json")
-      .then((data) =>
+      .then((data) => {
         this.setState({
           results: data.data.data.stations,
           searchedResults: data.data.data.stations,
-        })
-      )
+        });
+      })
       .catch((err) => {
         console.log(err);
         return null;
       });
   };
 
-  handleStationDetails = (station) => {
+  handleStationDetails = () => {
     oslocitybikes
       .get("station_status.json")
       .then((data) => {
-        const selectedStation = data.data.data.stations.filter(
-          (x) => x.station_id === station.station_id
-        );
-        this.setState({ activeStation: selectedStation[0] });
+        this.setState({ details: data.data.data.stations });
       })
       .catch((err) => {
         console.log(err);
@@ -60,14 +49,16 @@ class OsloBikes extends React.Component {
   };
 
   handleSearch = (e) => {
-    const searchedResults = this.state.results.filter((x) =>
-      x.name.toLowerCase().includes(e.target.value.toLowerCase())
+    const searchedResults = this.state.results.filter(
+      (x) =>
+        x.name.toLowerCase().includes(e.target.value.toLowerCase()) ||
+        x.address.toLowerCase().includes(e.target.value.toLowerCase())
     );
     this.setState({ search: e.target.value, searchedResults });
   };
 
   render() {
-    const { activeStation, search, searchedResults } = this.state;
+    const { details, search, searchedResults } = this.state;
 
     return (
       <main>
@@ -77,7 +68,7 @@ class OsloBikes extends React.Component {
             <label>Find a station:</label>
             <input
               type='search'
-              placeholder='Type a station name...'
+              placeholder='Type a station name or address...'
               onChange={this.handleSearch}
               value={search}
             />
@@ -85,27 +76,30 @@ class OsloBikes extends React.Component {
           <div className='card-container'>
             {searchedResults ? (
               searchedResults.map((station, index) => {
+                const match = details
+                  ? details.filter(
+                      (x) => x.station_id === station.station_id
+                    )[0]
+                  : [];
                 return (
-                  <div className='card' key={index}>
+                  <article className='card' key={index}>
                     <h2>{station.name}</h2>
                     <hr />
                     <p>
-                      <strong>Address:</strong> {station.address}
+                      <strong>Address: </strong>
+                      {station.address}
                     </p>
-                    <button
-                      className={`button accordion ${
-                        activeStation.station_id === station.station_id
-                          ? "active"
-                          : ""
-                      }`}
-                      onClick={() => this.handleStationDetails(station)}
-                    >
-                      <i className='fas fa-bicycle'></i>Bike Availability
-                    </button>
-                    {activeStation.station_id === station.station_id ? (
-                      <StationDetail station={activeStation} />
-                    ) : null}
-                  </div>
+                    <p>
+                      <a
+                        target='_blank'
+                        rel='noreferrer'
+                        href={`https://www.google.com/maps/search/?api=1&query=${station.lat},${station.lon}`}
+                      >
+                        See on map <i className='fas fa-map-marker-alt'></i>
+                      </a>
+                    </p>
+                    <StationDetail station={match} />
+                  </article>
                 );
               })
             ) : (

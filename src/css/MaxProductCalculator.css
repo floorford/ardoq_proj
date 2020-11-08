@@ -18,6 +18,8 @@ input {
   margin: 1rem;
   padding: 1rem;
   width: 33%;
+  color: black;
+  font-family: "Raleway", Arial, Helvetica, sans-serif;
 }
 
 @media screen and (max-width: 500px) {

@@ -38,15 +38,14 @@ class MaxProductCalculator extends React.Component {
 
       let maxProduct = highestThree.reduce((sum, val) => sum * +val, 1);
 
-      this.setState({ total: maxProduct, error: false });
+      this.setState({ total: maxProduct, error: false, highestThree });
     } else {
       this.setState({ error: true });
     }
   };
 
   render() {
-    const { list, input, total, error } = this.state;
-
+    const { list, input, total, error, highestThree } = this.state;
     return (
       <article className='calculator'>
         <h2>Max Product Calculator</h2>
@@ -66,7 +65,12 @@ class MaxProductCalculator extends React.Component {
               ))}
             </ul>
           ) : null}
-          {total ? <h4>The highest product is: {total}</h4> : null}
+          {total ? (
+            <h4>
+              The highest product is: {total}, a product of [
+              {highestThree.join(" * ")}]
+            </h4>
+          ) : null}
           <form>
             <label htmlFor='list'>
               Create a list of numbers, by entering numbers below

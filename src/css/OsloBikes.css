@@ -22,7 +22,12 @@ body {
   animation-name: shadow-show;
   animation-duration: 1.5s;
   width: 16%;
+  min-height: min-content;
   transition-timing-function: cubic-bezier(0.795, 0, 0.165, 1); /* custom */
+}
+
+.warning {
+  font-size: 13px;
 }
 
 .card p {
@@ -102,36 +107,41 @@ body {
   margin: initial;
 }
 
-.accordion {
-  cursor: pointer;
-  padding: 18px;
+.panel {
   width: 100%;
   border: none;
   text-align: left;
   outline: none;
   font-size: 15px;
-  padding-top: 0;
+  animation: fadein 2s;
 }
 
-.button.accordion {
-  margin-bottom: 0;
-  padding-top: 18px;
+.panel h4 {
+  text-transform: uppercase;
+  margin: 0;
 }
 
 .active,
-.accordion:hover,
 .button:hover:not([disabled]) {
   background-color: #ccc;
   color: black;
 }
 
 .panel {
-  overflow: hidden;
   width: initial;
+  padding: 18px;
   background-color: #ccc;
 }
 
-/* Standard syntax */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  color: salmon;
+}
+
 @keyframes line-show {
   from {
     margin: 0 100px;
@@ -141,7 +151,6 @@ body {
   }
 }
 
-/* Standard syntax */
 @keyframes p-show {
   from {
     color: white;
@@ -151,7 +160,6 @@ body {
   }
 }
 
-/* Standard syntax */
 @keyframes shadow-show {
   from {
     -webkit-box-shadow: 0 0 0 0 #e0e0e0;
@@ -160,5 +168,14 @@ body {
   to {
     -webkit-box-shadow: -20px -20px 0 0 #ff9d92;
     box-shadow: -20px -20px 0 0 #ff9d92;
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
