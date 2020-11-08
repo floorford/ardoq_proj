@@ -12,24 +12,9 @@ import "./css/style.css";
 import MaxProductCalculator from "./components/MaxProductCalculator";
 import OsloBikes from "./components/OsloBikes";
 import FourOhFour from "./components/FourOhFour";
+import Home from "./components/Home";
 
 const App = () => {
-  const home = (
-    <section className='home'>
-      <h3>Thanks for the oppurtunity to work on this task!</h3>
-      <p>A little explanation on what's before you:</p>
-      <p>
-        Libraries used:
-        <ul>
-          <li>Axios for API requests</li>
-          <li>ReactRouter for in-app navigation</li>
-          <li>Font Awesome for some iconisation</li>
-          <li>Google fonts</li>
-        </ul>
-      </p>
-    </section>
-  );
-
   return (
     <Router>
       <header>
@@ -54,7 +39,7 @@ const App = () => {
         </nav>
       </header>
       <Switch>
-        <Route path='/' exact render={() => home} />
+        <Route path='/' exact render={() => <Home />} />
         <Route
           path='/calculator'
           exact

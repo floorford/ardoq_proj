@@ -18,15 +18,11 @@
   animation-name: shadow-show;
   animation-duration: 1.5s;
   width: 16%;
-  min-height: min-content;
+  min-height: 340px;
   transition-timing-function: cubic-bezier(0.795, 0, 0.165, 1); /* custom */
 }
 
-.warning {
-  font-size: 13px;
-}
-
-.card p {
+.details {
   flex-grow: 1;
 }
 
@@ -136,6 +132,10 @@ a {
 
 a:hover {
   color: salmon;
+}
+
+p.warning {
+  font-size: 13px;
 }
 
 @keyframes line-show {

@@ -74,7 +74,7 @@ class OsloBikes extends React.Component {
             />
           </form>
           <div className='card-container'>
-            {searchedResults ? (
+            {searchedResults && searchedResults.length ? (
               searchedResults.map((station, index) => {
                 const match = details
                   ? details.filter(
@@ -85,25 +85,30 @@ class OsloBikes extends React.Component {
                   <article className='card' key={index}>
                     <h2>{station.name}</h2>
                     <hr />
-                    <p>
-                      <strong>Address: </strong>
-                      {station.address}
-                    </p>
-                    <p>
-                      <a
-                        target='_blank'
-                        rel='noreferrer'
-                        href={`https://www.google.com/maps/search/?api=1&query=${station.lat},${station.lon}`}
-                      >
-                        See on map <i className='fas fa-map-marker-alt'></i>
-                      </a>
-                    </p>
+                    <section className='details'>
+                      <p>
+                        <strong>Address: </strong>
+                        {station.address}
+                      </p>
+                      <p>
+                        <a
+                          target='_blank'
+                          rel='noreferrer'
+                          href={`https://www.google.com/maps/search/?api=1&query=${station.lat},${station.lon}`}
+                        >
+                          See on map <i className='fas fa-map-marker-alt'></i>
+                        </a>
+                      </p>
+                    </section>
                     <StationDetail station={match} />
                   </article>
                 );
               })
             ) : (
-              <p>Loading</p>
+              <p className='white-container'>
+                We're sorry but something wrong and no stations could be found.
+                Please try again later
+              </p>
             )}
           </div>
         </section>

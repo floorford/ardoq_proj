@@ -47,7 +47,7 @@ class MaxProductCalculator extends React.Component {
   render() {
     const { list, input, total, error, highestThree } = this.state;
     return (
-      <article className='calculator'>
+      <article className='white-container calculator'>
         <h2>Max Product Calculator</h2>
         <section>
           <p>

@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 
 import "../css/FourOhFour.css";
@@ -6,7 +5,7 @@ import catImage from "../assets/cat.jpg";
 
 const FourOhFour = () => {
   return (
-    <section className='fourohfour'>
+    <section className='white-container fourohfour'>
       <div>
         <h3>Uh oh!</h3>
         <p>We're sorry but something went wrong!</p>
