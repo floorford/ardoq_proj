@@ -13,6 +13,7 @@ class OsloBikes extends React.Component {
       searchedResults: [],
       activeStation: [],
       search: "",
+      message: "loading",
     };
   }
 
@@ -32,6 +33,10 @@ class OsloBikes extends React.Component {
       })
       .catch((err) => {
         console.log(err);
+        this.setState({
+          results: [],
+          searchedResults: [],
+        });
         return null;
       });
   };
@@ -44,6 +49,11 @@ class OsloBikes extends React.Component {
       })
       .catch((err) => {
         console.log(err);
+        this.setState({
+          message:
+            "We're sorry but something wrong and no stations could be found. Please try again later",
+          details: [],
+        });
         return null;
       });
   };
@@ -58,7 +68,7 @@ class OsloBikes extends React.Component {
   };
 
   render() {
-    const { details, search, searchedResults } = this.state;
+    const { details, search, searchedResults, message } = this.state;
 
     return (
       <main>
@@ -105,10 +115,7 @@ class OsloBikes extends React.Component {
                 );
               })
             ) : (
-              <p className='white-container'>
-                We're sorry but something wrong and no stations could be found.
-                Please try again later
-              </p>
+              <p className='white-container'>{message}</p>
             )}
           </div>
         </section>
