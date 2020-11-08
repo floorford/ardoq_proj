@@ -1,20 +1,21 @@
 {
   "files": {
-    "main.css": "/ardoq_proj/static/css/main.68f355c4.chunk.css",
-    "main.js": "/ardoq_proj/static/js/main.4b9757c0.chunk.js",
-    "main.js.map": "/ardoq_proj/static/js/main.4b9757c0.chunk.js.map",
+    "main.css": "/ardoq_proj/static/css/main.df30e0fb.chunk.css",
+    "main.js": "/ardoq_proj/static/js/main.20102852.chunk.js",
+    "main.js.map": "/ardoq_proj/static/js/main.20102852.chunk.js.map",
     "runtime-main.js": "/ardoq_proj/static/js/runtime-main.adc2caf6.js",
     "runtime-main.js.map": "/ardoq_proj/static/js/runtime-main.adc2caf6.js.map",
-    "static/js/2.b54a6d1c.chunk.js": "/ardoq_proj/static/js/2.b54a6d1c.chunk.js",
-    "static/js/2.b54a6d1c.chunk.js.map": "/ardoq_proj/static/js/2.b54a6d1c.chunk.js.map",
+    "static/js/2.4d457dfc.chunk.js": "/ardoq_proj/static/js/2.4d457dfc.chunk.js",
+    "static/js/2.4d457dfc.chunk.js.map": "/ardoq_proj/static/js/2.4d457dfc.chunk.js.map",
     "index.html": "/ardoq_proj/index.html",
-    "static/css/main.68f355c4.chunk.css.map": "/ardoq_proj/static/css/main.68f355c4.chunk.css.map",
-    "static/js/2.b54a6d1c.chunk.js.LICENSE.txt": "/ardoq_proj/static/js/2.b54a6d1c.chunk.js.LICENSE.txt"
+    "static/css/main.df30e0fb.chunk.css.map": "/ardoq_proj/static/css/main.df30e0fb.chunk.css.map",
+    "static/js/2.4d457dfc.chunk.js.LICENSE.txt": "/ardoq_proj/static/js/2.4d457dfc.chunk.js.LICENSE.txt",
+    "static/media/cat.09d6aee1.jpg": "/ardoq_proj/static/media/cat.09d6aee1.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.adc2caf6.js",
-    "static/js/2.b54a6d1c.chunk.js",
-    "static/css/main.68f355c4.chunk.css",
-    "static/js/main.4b9757c0.chunk.js"
+    "static/js/2.4d457dfc.chunk.js",
+    "static/css/main.df30e0fb.chunk.css",
+    "static/js/main.20102852.chunk.js"
   ]
 }
