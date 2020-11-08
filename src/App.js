@@ -1,5 +1,11 @@
 import React from "react";
-import { HashRouter as Router, Route, Switch, NavLink } from "react-router-dom";
+import {
+  HashRouter as Router,
+  Route,
+  Switch,
+  Link,
+  NavLink,
+} from "react-router-dom";
 
 import "./css/style.css";
 
@@ -9,12 +15,17 @@ import FourOhFour from "./components/FourOhFour";
 
 const App = () => {
   const home = (
-    <section>
-      <h5>Thanks for the oppurtunity to work on this task!</h5>
+    <section className='home'>
+      <h3>Thanks for the oppurtunity to work on this task!</h3>
       <p>A little explanation on what's before you:</p>
       <p>
-        I've used axios to make the requests to the Oslo Bikes API and React
-        Router for the in app navigation
+        Libraries used:
+        <ul>
+          <li>Axios for API requests</li>
+          <li>ReactRouter for in-app navigation</li>
+          <li>Font Awesome for some iconisation</li>
+          <li>Google fonts</li>
+        </ul>
       </p>
     </section>
   );
@@ -22,18 +33,20 @@ const App = () => {
   return (
     <Router>
       <header>
-        <h1>Ardoq Project</h1>
+        <h1>
+          <Link to='/'>Ardoq Project</Link>
+        </h1>
         <nav>
           <ul className='menu'>
             <li>
               <NavLink activeClassName='active' to='/calculator'>
-                <i className='fi-list'></i>
+                <i className='fas fa-calculator'></i>
                 <span>Max Product Calculator</span>
               </NavLink>
             </li>
             <li>
               <NavLink activeClassName='active' to='/oslobikes'>
-                <i className='fi-list'></i>
+                <i className='fas fa-bicycle'></i>
                 <span>Oslo Bikes</span>
               </NavLink>
             </li>

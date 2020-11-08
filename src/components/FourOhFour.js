@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import "../css/FourOhFour.css";
+import catImage from "../assets/cat.jpg";
 
 const FourOhFour = () => {
   return (
@@ -23,7 +24,7 @@ const FourOhFour = () => {
         </p>
       </div>
       <div>
-        <img alt='shower cat' src='assets/cat.jpg' />
+        <img alt='shower cat' src={catImage} />
       </div>
     </section>
   );

@@ -1,4 +1,6 @@
-.calculator {
+.calculator,
+.home,
+.fourohfour {
   background-color: white;
   color: black;
   padding: 1rem;

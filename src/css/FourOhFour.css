@@ -13,3 +13,18 @@
 .fourohfour div:last-of-type {
   width: 40%;
 }
+
+.fourohfour a {
+  font-weight: bold;
+}
+
+@media screen and (max-width: 500px) {
+  .fourohfour {
+    flex-direction: column;
+  }
+
+  .fourohfour div:first-of-type,
+  .fourohfour div:last-of-type {
+    width: 100%;
+  }
+}
